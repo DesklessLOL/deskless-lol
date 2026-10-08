@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deskless | Rulebook inside the coin</title>
+<meta name="description" content="Deskless is a Solana coin idea where the rulebook runs inside the coin: charges, burns and notes, with no bot standing beside it.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#292621">
+<link rel="canonical" href="https://deskless.lol/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta property="og:title" content="Deskless">
+<meta property="og:description" content="A rulebook inside the coin. Solana.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://deskless.lol/">
+<meta property="og:image" content="https://deskless.lol/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/json" id="register">{"domain":{"state":"stated","value":"deskless.lol","url":"https://deskless.lol"},"chain":{"state":"stated","value":"Solana","url":null},"rpc":{"state":"stated","value":"https://solana-rpc.publicnode.com","url":"https://solana-rpc.publicnode.com"},"dex":{"state":"stated","value":"https://api.dexscreener.com/latest/dex/search?q=deskless","url":"https://api.dexscreener.com/latest/dex/search?q=deskless"},"dexFallback":{"state":"stated","value":"https://api.dexscreener.com/latest/dex/search?q=sol&chainIds=solana","url":"https://api.dexscreener.com/latest/dex/search?q=sol&chainIds=solana"},"ca":{"state":"absent","value":null,"url":null},"x":{"state":"absent","value":null,"url":null},"github":{"state":"absent","value":null,"url":null}}</script>
+<script src="/boot.js"></script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Jump to main</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <div class="bar wrap">
+    <a class="brand" href="/" aria-label="Deskless home">
+      <img class="brand-mark" src="/img/mark-96.png" width="36" height="36" alt="">
+      <span class="brand-word">DESKLESS</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#model" data-spot>Model</a>
+      <a href="#abilities" data-spot>Abilities</a>
+      <a href="#live" data-spot>Live</a>
+      <a href="#build" data-spot>Build</a>
+    </nav>
+    <div class="bar-right">
+      <div class="pill" id="status-pill" data-state="connecting" role="status" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pill-text" id="pill-text">Linking</span>
+      </div>
+      <div class="socials" aria-label="Social links">
+        <span class="social is-inert" data-record="x" data-state="absent" role="img" aria-label="X, not announced yet"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
+        <span class="social is-inert" data-record="github" data-state="absent" role="img" aria-label="GitHub, not announced yet"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg></span>
+      </div>
+    </div>
+  </div>
+  <div class="ca" data-record="ca" data-state="absent"><div class="ca-inner wrap">
+    <span class="ca-label">Contract address</span>
+    <button type="button" class="ca-btn is-inert" id="ca-btn" disabled aria-disabled="true"><span class="ca-value" id="ca-value">Not announced yet</span><span class="ca-action"><span class="ca-action-text">Locked</span></span></button>
+  </div></div>
+</header>
+
+<main id="main">
+
+<section class="hero wrap" id="hero" data-hero>
+  <div class="hero-copy" data-stagger>
+    <p class="eyebrow" data-reveal>Solana-native idea</p>
+    <h1 class="outline" data-reveal>Put the rulebook inside the coin</h1>
+    <p class="lede" data-reveal>Deskless is built on one idea: a coin should carry its own rulebook. Small programs called hooks wake up whenever it moves. They can skim a charge, burn a slice, update a ledger or veto the move outright. Nothing sits on the sidelines watching.</p>
+    <div class="cta" data-reveal>
+      <a class="btn btn-solid" href="#model" data-spot>See how hooks think</a>
+      <a class="btn btn-line" href="#live" data-spot>Watch the chain</a>
+    </div>
+    <p class="domain-tag" data-reveal><span class="domain-icon" aria-hidden="true"></span><span data-record="domain" data-state="stated">deskless.lol</span></p>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="layer layer-grid" data-depth="0.015"></div>
+    <div class="layer layer-shards-far" data-depth="0.04"><i class="shard sf1"></i><i class="shard sf2"></i><i class="shard sf3"></i><i class="shard sf4"></i><i class="shard sf5"></i><i class="shard sf6"></i><i class="shard sf7"></i><i class="shard sf8"></i><i class="shard sf9"></i></div>
+    <div class="layer layer-mark" data-depth="0.025">
+      <picture>
+        <source type="image/webp" srcset="/img/mark-640.webp 640w, /img/mark-1280.webp 1280w" sizes="(min-width: 64rem) 46vw, 90vw">
+        <img src="/img/mark-1280.png" width="1280" height="1280" alt="" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="layer layer-shards-near" data-depth="0.09"><i class="shard sn1"></i><i class="shard sn2"></i><i class="shard sn3"></i><i class="shard sn4"></i><i class="shard sn5"></i><i class="shard sn6"></i><i class="shard sn7"></i></div>
+  </div>
+</section>
+
+<section class="pulse wrap" id="live" aria-labelledby="live-h">
+  <header class="sec-head" data-stagger>
+    <p class="eyebrow" data-reveal>Live feed</p>
+    <h2 id="live-h" data-reveal>The chain, right now</h2>
+    <p class="sec-sub" data-reveal>Everything in this strip is fetched in your browser from public endpoints. When a source is down the tile admits it rather than guessing.</p>
+  </header>
+
+  <div class="tiles" data-stagger>
+    <article class="tile" data-reveal data-spot data-tile="block" data-state="loading">
+      <h3 class="tile-label">Solana block height</h3>
+      <p class="tile-value"><span class="skel" aria-hidden="true"></span><span class="val" id="v-block">&mdash;</span></p>
+      <p class="tile-note" id="n-block">Confirmed commitment, checked every 2 s</p>
+    </article>
+    <article class="tile" data-reveal data-spot data-tile="pairs" data-state="loading">
+      <h3 class="tile-label">Pairs found</h3>
+      <p class="tile-value"><span class="skel" aria-hidden="true"></span><span class="val" id="v-pairs">&mdash;</span></p>
+      <p class="tile-note" id="n-pairs">Solana pools matching the name</p>
+    </article>
+    <article class="tile" data-reveal data-spot data-tile="volume" data-state="loading">
+      <h3 class="tile-label">Day volume</h3>
+      <p class="tile-value"><span class="skel" aria-hidden="true"></span><span class="val" id="v-volume">&mdash;</span></p>
+      <p class="tile-note" id="n-volume">Summed over every listed pair</p>
+    </article>
+    <article class="tile" data-reveal data-spot data-tile="price" data-state="loading">
+      <h3 class="tile-label">Lead pair price</h3>
+      <p class="tile-value"><span class="skel" aria-hidden="true"></span><span class="val" id="v-price">&mdash;</span></p>
+      <p class="tile-note" id="n-price">Deepest pool by liquidity</p>
+    </article>
+  </div>
+
+  <div class="marquee" id="marquee" data-state="loading" aria-label="Tokens found on Solana">
+    <div class="marquee-skel" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="marquee-track" id="marquee-track"></div>
+    <p class="marquee-note" id="marquee-note" hidden></p>
+  </div>
+
+  <div class="pairs" id="pairs" data-state="loading" data-mode="own">
+    <p class="pairs-label" id="pairs-label" hidden>Trending on Solana</p>
+    <div class="pairs-head" aria-hidden="true">
+      <span>Token</span><span>Price</span><span>Day</span><span>Volume</span><span>Pair</span>
+    </div>
+    <div class="pairs-body" id="pairs-body">
+      <div class="row skeleton-row" aria-hidden="true"><span class="skel"></span></div>
+      <div class="row skeleton-row" aria-hidden="true"><span class="skel"></span></div>
+      <div class="row skeleton-row" aria-hidden="true"><span class="skel"></span></div>
+    </div>
+    <p class="pairs-note" id="pairs-note" role="status"></p>
+  </div>
+</section>
+
+<section class="model wrap" id="model" aria-labelledby="model-h">
+  <header class="sec-head" data-stagger>
+    <p class="eyebrow" data-reveal>Plate A</p>
+    <h2 id="model-h" data-reveal>One move, two outcomes</h2>
+    <p class="sec-sub" data-reveal>A plain checkpoint can only nod or shake its head. A Deskless hook reaches inside the sum being sent and decides where every unit lands.</p>
+  </header>
+
+  <div class="duo" data-stagger>
+    <article class="card" data-reveal data-spot>
+      <p class="card-tag">A &middot; Checkpoint only</p>
+      <h3>Wave through or stop</h3>
+      <div class="flow" role="img" aria-label="Example: 100 units sent, 100 units received">
+        <span class="chip chip-big">100 sent</span><span class="arrow" aria-hidden="true"></span><span class="chip chip-big">100 received</span>
+      </div>
+      <dl class="facts">
+        <div><dt>Moment</dt><dd>After balances already changed, on plain moves only.</dd></div>
+        <div><dt>Context</dt><dd>A frozen snapshot with no sense of buyer, seller, quote or liquidity.</dd></div>
+        <div><dt>Power</dt><dd>Approve it or roll it back. The figure itself never bends.</dd></div>
+      </dl>
+    </article>
+    <article class="card card-hot" data-reveal data-spot>
+      <p class="card-tag">B &middot; Deskless hook</p>
+      <h3>Reshapes the figure</h3>
+      <div class="flow" role="img" aria-label="Worked example: 100 units sent, 92 received, 5 routed, 3 burned">
+        <span class="chip chip-big">100 sent</span><span class="arrow" aria-hidden="true"></span>
+        <span class="split"><span class="chip">92 received</span><span class="chip">5 routed</span><span class="chip">3 burned</span></span>
+      </div>
+      <p class="fine">Worked example only. The split is a drawing aid, not a rate.</p>
+      <dl class="facts">
+        <div><dt>Moment</dt><dd>Before and after the move, so it can act on the figure mid-flight.</dd></div>
+        <div><dt>Context</dt><dd>Sender, receiver, size of the send and where both wallets stand.</dd></div>
+        <div><dt>Power</dt><dd>Divide, destroy, tag, price or refuse. Whatever the rule says.</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section class="abilities wrap" id="abilities" aria-labelledby="abil-h">
+  <header class="sec-head" data-stagger>
+    <p class="eyebrow" data-reveal>Plate B</p>
+    <h2 id="abil-h" data-reveal>What a rule can say</h2>
+  </header>
+  <ul class="grid5" data-stagger>
+    <li class="card ability" data-reveal data-spot><span class="num">01</span><h3>Skim</h3><p>Route a share of each move to an address the rule picks.</p></li>
+    <li class="card ability" data-reveal data-spot><span class="num">02</span><h3>Burn</h3><p>Retire a slice of each send so supply thins as the coin gets used.</p></li>
+    <li class="card ability" data-reveal data-spot><span class="num">03</span><h3>Price</h3><p>Fix what an exchange costs before it executes.</p></li>
+    <li class="card ability" data-reveal data-spot><span class="num">04</span><h3>Remember</h3><p>Park a small note beside each balance, saved when the balance is.</p></li>
+    <li class="card ability" data-reveal data-spot><span class="num">05</span><h3>Refuse</h3><p>Cancel everything. Nothing shifts, nobody pays.</p></li>
+  </ul>
+</section>
+
+<section class="keeper wrap" id="keeper" aria-labelledby="keep-h">
+  <header class="sec-head" data-stagger>
+    <p class="eyebrow" data-reveal>Plate C</p>
+    <h2 id="keep-h" data-reveal>No night shift required</h2>
+    <p class="sec-sub" data-reveal>Plenty of coins fake their rules with a script on somebody&rsquo;s server. That script holds keys, can stall, and answers to whoever pays the hosting bill. A rule inside the coin has none of those weak spots.</p>
+  </header>
+  <div class="duo" data-stagger>
+    <article class="card" data-reveal data-spot>
+      <p class="card-tag">Outside</p>
+      <h3>A script beside the coin</h3>
+      <ul class="plain">
+        <li>Lives on a private machine</li>
+        <li>Holds wallet keys to act</li>
+        <li>Stops the moment the server does</li>
+        <li>Trust means trusting the operator</li>
+      </ul>
+    </article>
+    <article class="card card-hot" data-reveal data-spot>
+      <p class="card-tag">Inside</p>
+      <h3>A rule in the coin</h3>
+      <ul class="plain">
+        <li>Lives on the ledger beside every balance</li>
+        <li>Fires on its own with each move</li>
+        <li>Runs as long as the chain does</li>
+        <li>Trust means reading the code</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="build wrap" id="build" aria-labelledby="build-h">
+  <header class="sec-head" data-stagger>
+    <p class="eyebrow" data-reveal>Open design space</p>
+    <h2 id="build-h" data-reveal>Rules nobody has written yet</h2>
+    <p class="sec-sub" data-reveal>Once the rulebook is code, the list of possible tokens gets long. A few sketches:</p>
+  </header>
+  <ul class="grid3" data-stagger>
+    <li class="card" data-reveal data-spot><h3>Loyalty curve</h3><p>Charges shrink the longer an address sits on its coins.</p></li>
+    <li class="card" data-reveal data-spot><h3>Sell-side burn</h3><p>Destroy a sliver only when an exchange leaves the pool.</p></li>
+    <li class="card" data-reveal data-spot><h3>Holder perks</h3><p>Discounts for wallets that also hold a partner token.</p></li>
+    <li class="card" data-reveal data-spot><h3>Cooling brake</h3><p>Lift charges briefly after a violent price swing.</p></li>
+    <li class="card" data-reveal data-spot><h3>Referral share</h3><p>Send a slice to whoever brought the buyer.</p></li>
+    <li class="card" data-reveal data-spot><h3>Time-weighted drops</h3><p>Reward by how long balances sat, not by how big they were.</p></li>
+  </ul>
+</section>
+
+<section class="desk wrap" id="address" aria-labelledby="addr-h">
+  <article class="card card-hot" data-reveal data-spot data-record="ca-notice" data-state="absent">
+    <p class="eyebrow">Address notice</p>
+    <h2 id="addr-h">No contract address yet</h2>
+    <p>None has been published. The strip pinned at the top of the site will show the full address, ready to copy, the moment one is. Until it appears there, treat every address you meet elsewhere as unverified.</p>
+  </article>
+</section>
+
+</main>
+
+<footer class="foot wrap">
+  <p class="foot-brand">DESKLESS</p>
+  <p class="foot-line">Chain: <span data-record="chain" data-state="stated">Solana</span> &middot; Domain: <span data-record="domain" data-state="stated">deskless.lol</span></p>
+  <p class="foot-fine">Prices and block data come live from public sources and can lag or fail. Nothing here is financial advice. Check any address against the strip at the top before you send anything.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

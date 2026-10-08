@@ -1,0 +1,58 @@
+/*
+  Palette tokens. The only file in the project allowed to hold colour literals.
+  Provenance: every value is a real pixel read from brand/ assets (8-bit RGB, decoded
+  by sharp). "q" rows are luminance quantiles over pixels with alpha >= 224 in
+  brand/LOGO DESKLESS PNG...png. "k" rows are k-means (K=6, 25 iterations) centroids over
+  opaque pixels of the same file, snapped to the nearest real pixel. "p" row is the
+  flat backdrop of brand/LOGO DESKLESS PNG.png. Format: file@x,y after the token.
+  scripts/gates.mjs re-reads each coordinate and fails on any mismatch.
+*/
+:root {
+  --c-ink-0:   #292621; /* q0     LOGO DESKLESS PNG...png@598,934  */
+  --c-ink-1:   #3d3b3d; /* q.0005 LOGO DESKLESS PNG...png@986,1077 */
+  --c-ink-2:   #444344; /* q.005  LOGO DESKLESS PNG...png@926,1041 */
+  --c-ink-3:   #4a4a4c; /* q.02   LOGO DESKLESS PNG...png@666,1159 */
+  --c-line:    #5d5d5e; /* q.10   LOGO DESKLESS PNG...png@1195,953 */
+  --c-mid:     #757478; /* q.25   LOGO DESKLESS PNG...png@850,1205 */
+  --c-muted:   #969595; /* q.50   LOGO DESKLESS PNG...png@1265,961 */
+  --c-soft:    #bbbabc; /* q.75   LOGO DESKLESS PNG...png@1271,827 */
+  --c-text:    #d5d3d5; /* q.90   LOGO DESKLESS PNG...png@1424,746 */
+  --c-high:    #e8e8e8; /* q.98   LOGO DESKLESS PNG...png@1084,911 */
+  --c-white:   #fbfbfb; /* q1     LOGO DESKLESS PNG...png@1482,660 */
+  --c-paper:   #a9a9a9; /* p      LOGO DESKLESS PNG.png@0,0        */
+  --c-k1:      #535355; /* k      LOGO DESKLESS PNG...png@900,1025 */
+  --c-k2:      #6c6c6e; /* k      LOGO DESKLESS PNG...png@500,879  */
+  --c-k3:      #868688; /* k      LOGO DESKLESS PNG...png@600,913  */
+  --c-k4:      #a1a1a3; /* k      LOGO DESKLESS PNG...png@700,877  */
+  --c-k5:      #bfbfc0; /* k      LOGO DESKLESS PNG...png@1400,898 */
+  --c-k6:      #dcdcdc; /* k      LOGO DESKLESS PNG...png@600,722  */
+
+  /* roles */
+  --bg:        var(--c-ink-0);
+  --surface:   var(--c-ink-1);
+  --raised:    var(--c-ink-2);
+  --line:      var(--c-line);
+  --text:      var(--c-text);
+  --text-dim:  var(--c-muted);
+  --text-hi:   var(--c-white);
+
+  /* motion, measured on the reference: lift 80ms, fade 120ms, switch 200ms, shimmer 2.4s/6 steps, blink 1.2s/2 steps */
+  --dur-lift: 80ms;
+  --dur-fade: 120ms;
+  --dur-switch: 200ms;
+  --dur-settle: 480ms;
+  --step-lift: steps(2, end);
+  --step-switch: steps(5, end);
+  --step-shimmer: steps(6, end);
+  --ease-settle: cubic-bezier(.2, .8, .2, 1);
+
+  /* type */
+  --font-display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* layout, from the reference breakpoints 40rem / 64rem / 80rem */
+  --gutter: 16px;
+  --tap: 44px;
+}
+@media (min-width: 40rem) { :root { --gutter: 24px; } }
+@media (min-width: 64rem) { :root { --gutter: 32px; } }

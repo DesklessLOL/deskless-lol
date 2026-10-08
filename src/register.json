@@ -1,0 +1,42 @@
+{
+  "domain": {
+    "state": "stated",
+    "value": "deskless.lol",
+    "url": "https://deskless.lol"
+  },
+  "chain": {
+    "state": "stated",
+    "value": "Solana",
+    "url": null
+  },
+  "rpc": {
+    "state": "stated",
+    "value": "https://solana-rpc.publicnode.com",
+    "url": "https://solana-rpc.publicnode.com"
+  },
+  "dex": {
+    "state": "stated",
+    "value": "https://api.dexscreener.com/latest/dex/search?q=deskless",
+    "url": "https://api.dexscreener.com/latest/dex/search?q=deskless"
+  },
+  "dexFallback": {
+    "state": "stated",
+    "value": "https://api.dexscreener.com/latest/dex/search?q=sol&chainIds=solana",
+    "url": "https://api.dexscreener.com/latest/dex/search?q=sol&chainIds=solana"
+  },
+  "ca": {
+    "state": "absent",
+    "value": null,
+    "url": null
+  },
+  "x": {
+    "state": "absent",
+    "value": null,
+    "url": null
+  },
+  "github": {
+    "state": "absent",
+    "value": null,
+    "url": null
+  }
+}
